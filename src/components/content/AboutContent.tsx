@@ -1,4 +1,5 @@
 import React from 'react';
+import profilePic from '../../assets/profile.jpg';
 
 export default function AboutContent() {
   return (
@@ -10,7 +11,7 @@ export default function AboutContent() {
           <div className="flex-shrink-0 mx-auto md:mx-0">
             <div className="win-border p-1 bg-w98-light w-48 h-48 shadow-md">
               <img 
-                src="/profile.jpg" 
+                src={profilePic} 
                 alt="Iván Muñoz Moreno" 
                 className="w-full h-full object-cover win-border-pressed" 
                 referrerPolicy="no-referrer"
