@@ -16,12 +16,37 @@ interface DesktopProps {
 
 const DesktopIcon = ({ shortcut, onOpenWindow }: { key?: React.Key, shortcut: any, onOpenWindow: (s: any) => void }) => {
   const nodeRef = React.useRef(null);
+  const dragStartPos = React.useRef({ x: 0, y: 0 });
+
   return (
-    <Draggable nodeRef={nodeRef} bounds="parent">
+    <Draggable 
+      nodeRef={nodeRef} 
+      bounds="parent"
+      onStart={(e, data) => {
+        dragStartPos.current = { x: data.x, y: data.y };
+      }}
+      onStop={(e, data) => {
+        const dx = Math.abs(data.x - dragStartPos.current.x);
+        const dy = Math.abs(data.y - dragStartPos.current.y);
+        
+        // If movement is less than 5 pixels, it's a click/tap, not a drag
+        if (dx < 5 && dy < 5) {
+          const isMobile = window.innerWidth < 640 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+          if (isMobile) {
+            onOpenWindow(shortcut);
+          }
+        }
+      }}
+    >
       <div 
         ref={nodeRef}
         className="w-[80px] flex flex-col items-center gap-1 cursor-pointer p-2 hover:bg-white/10 hover:border hover:border-dotted hover:border-white/50 border border-transparent"
-        onDoubleClick={() => onOpenWindow(shortcut)}
+        onDoubleClick={(e) => {
+            const isMobile = window.innerWidth < 640 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+            if (!isMobile) {
+                onOpenWindow(shortcut);
+            }
+        }}
       >
         <div className="win-border w-12 h-12 bg-gray-100 flex items-center justify-center shrink-0">
           {shortcut.icon}

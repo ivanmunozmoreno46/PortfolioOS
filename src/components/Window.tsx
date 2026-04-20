@@ -14,10 +14,11 @@ interface WindowProps {
 
 export default function OsWindow({ data, onClose, onMinimize, onFocus }: WindowProps) {
   const nodeRef = useRef(null);
-  const [isFullScreen, setIsFullScreen] = useState(false);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+  const [isFullScreen, setIsFullScreen] = useState(isMobile);
   const [position, setPosition] = useState({ 
-    x: Math.max(0, (window.innerWidth - 600) / 2), 
-    y: Math.max(0, (window.innerHeight - 400) / 2) 
+    x: isMobile ? 0 : Math.max(0, (window.innerWidth - 600) / 2), 
+    y: isMobile ? 0 : Math.max(0, (window.innerHeight - 400) / 2) 
   });
 
   const toggleFullScreen = () => {
@@ -42,7 +43,7 @@ export default function OsWindow({ data, onClose, onMinimize, onFocus }: WindowP
     >
       <div 
         ref={nodeRef} 
-        className={`absolute top-0 left-0 ${isFullScreen ? 'w-full h-full' : 'w-[600px] h-[400px]'}`}
+        className={`absolute top-0 left-0 ${isFullScreen ? 'w-full h-full' : 'w-[95vw] sm:w-[600px] h-[80vh] sm:h-[400px] max-w-full'}`}
         style={{ zIndex: data.zIndex }}
         onMouseDownCapture={onFocus}
       >

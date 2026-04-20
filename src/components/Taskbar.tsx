@@ -34,8 +34,8 @@ export default function Taskbar({ windows, onFocusWindow, onToggleMinimize }: Ta
   };
 
   return (
-    <div className="h-8 bg-w98-bg border-t-2 border-white absolute bottom-0 w-full flex items-center px-1 gap-1 relative z-50">
-      <div className="flex items-center gap-1 h-full w-full">
+    <div className="h-8 bg-w98-bg border-t-2 border-white w-full flex items-center px-1 gap-1 relative z-50">
+      <div className="flex items-center gap-1 h-full w-full overflow-hidden">
         {/* Start Button */}
         <button
           onClick={() => setStartOpen(!startOpen)}
@@ -61,14 +61,14 @@ export default function Taskbar({ windows, onFocusWindow, onToggleMinimize }: Ta
         <div className="h-6 w-px bg-white/50 mx-1" />
 
         {/* Window Tabs */}
-        <div className="flex gap-1 h-full py-1">
+        <div className="flex gap-1 h-full py-1 flex-1 overflow-x-auto overflow-y-hidden mx-1" style={{ scrollbarWidth: 'none' }}>
           {windows.map((win) => {
             const isActive = !win.isMinimized;
             return (
               <button
                 key={win.id}
                 onClick={() => handleTabClick(win)}
-                className={`flex items-center justify-start px-3 py-0.5 text-xs font-bold gap-2 text-left truncate ${isActive ? 'win-border-pressed bg-gray-100' : 'win-border bg-w98-bg'}`}
+                className={`flex items-center justify-start px-3 py-0.5 text-xs font-bold gap-2 text-left truncate shrink-0 max-w-[120px] sm:max-w-[180px] ${isActive ? 'win-border-pressed bg-gray-100' : 'win-border bg-w98-bg'}`}
               >
                 <span className="truncate">{win.title}</span>
               </button>
