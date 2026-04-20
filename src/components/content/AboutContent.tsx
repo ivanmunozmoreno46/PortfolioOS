@@ -7,12 +7,12 @@ export default function AboutContent() {
         <h1 className="text-3xl font-bold tracking-tight text-w98-titlebar mb-4 border-b-2 border-w98-titlebar pb-2">Sobre Mí</h1>
         
         <div className="flex flex-col md:flex-row gap-6 mt-4">
-          <div className="flex-shrink-0 mx-auto md:mx-0">
-            <div className="win-border p-1 bg-w98-light w-48 h-48 shadow-md">
+          <div className="flex-none w-full md:w-auto flex justify-center md:justify-start">
+            <div className="win-border p-1 bg-[#dfdfdf] w-[192px] h-[192px] shrink-0 shadow-md transform transition-transform">
               <img 
                 src="https://media.licdn.com/dms/image/v2/D4D03AQGr_wU8WB5c8Q/profile-displayphoto-scale_400_400/B4DZfLt5HVGkAg-/0/1751469495354?e=1778112000&v=beta&t=-mKQr2sng4tgTAqW45_u1tPwZE5jXZ2UmEgdJO3JNrw" 
                 alt="Iván Muñoz Moreno" 
-                className="w-full h-full object-cover win-border-pressed"
+                className="w-full h-full object-cover win-border-pressed bg-white"
                 referrerPolicy="no-referrer"
               />
             </div>
