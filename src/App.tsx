@@ -82,7 +82,7 @@ export default function App() {
 
   return (
     <OsContext.Provider value={{ openWindow }}>
-      <div className="w-full h-screen overflow-hidden flex flex-col bg-w98-desktop relative font-retro">
+      <div className="w-full h-[100dvh] overflow-hidden flex flex-col bg-w98-desktop relative font-retro">
         <Desktop 
           shortcuts={DesktopShortcuts} 
           onOpenWindow={openWindow} 

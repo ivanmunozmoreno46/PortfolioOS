@@ -41,7 +41,7 @@
     @apply font-sans text-w98-black overflow-hidden select-none bg-w98-desktop;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
   }
 }
