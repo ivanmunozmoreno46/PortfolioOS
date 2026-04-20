@@ -13,8 +13,7 @@ export default function AboutContent() {
               <img 
                 src={profilePic} 
                 alt="Iván Muñoz Moreno" 
-                className="w-full h-full object-cover win-border-pressed" 
-                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover win-border-pressed"
               />
             </div>
           </div>
