@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { Folder, FileText, ChevronLeft, Server, Code, HardDrive, Globe, Play, FileJson } from 'lucide-react';
+import { Folder, FileText, ChevronLeft, Server, Code, HardDrive, Globe, Play, FileJson, Package, Target, Gamepad2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { OsContext } from '../../App';
 
 const projects = [
   {
     id: 'microspeed',
-    title: 'MicroSpeed.exe',
+    title: 'MicroSpeed',
     category: 'Web App',
     icon: <Globe className="w-16 h-16 text-blue-600 fill-blue-100 drop-shadow-md group-hover:-translate-y-1 transition-transform" />,
     description: 'Aplicación web interactiva que te permite testear y analizar la velocidad y rendimiento. Experiencia integrada navegable directamente desde el sistema IvánOS.',
@@ -30,6 +30,33 @@ const projects = [
     description: 'Herramienta web optimizada para la validación, formateo y visualización de estructuras de datos en formato JSON. Interfaz rápida pensada para facilitar el flujo de trabajo de los desarrolladores.',
     tech: ['React', 'JSON Parsing', 'Tooling'],
     url: 'https://validacion-datos-json.vercel.app/'
+  },
+  {
+    id: 'glovo-logistics',
+    title: 'Glovo Logistics',
+    category: 'Logistics / Dashboard',
+    icon: <Package className="w-16 h-16 text-[#FFC244] fill-[#FFF3D4] drop-shadow-md group-hover:-translate-y-1 transition-transform" />,
+    description: 'Panel de control logístico inspirado en el ecosistema de Glovo. Desarrollado para el seguimiento de métricas y la visualización de rutas, optimizado con herramientas frontend modernas.',
+    tech: ['React', 'Dashboard UI', 'Tailwind CSS'],
+    url: 'https://glovo-logistics.vercel.app/'
+  },
+  {
+    id: 'dartcount',
+    title: 'DartCount',
+    category: 'Sports / Utility App',
+    icon: <Target className="w-16 h-16 text-slate-800 fill-slate-200 drop-shadow-md group-hover:-translate-y-1 transition-transform" />,
+    description: 'Aplicación interactiva para llevar un control estricto de las puntuaciones en partidas de dardos. Integra lógica de juego para facilitar las partidas en tiempo real.',
+    tech: ['React', 'Game Logic', 'State Management'],
+    url: 'https://dartcount.vercel.app/'
+  },
+  {
+    id: 'playhubgx',
+    title: 'PlayHub GX',
+    category: 'Gaming / Platform UI',
+    icon: <Gamepad2 className="w-16 h-16 text-purple-600 fill-purple-100 drop-shadow-md group-hover:-translate-y-1 transition-transform" />,
+    description: 'Plataforma inmersiva dedicada a la exposición y navegación del mundo de los videojuegos. Componentes enfocados a gamers e infraestructura frontend especializada.',
+    tech: ['React', 'Gaming UI', 'Vite'],
+    url: 'https://playhubgx.vercel.app/'
   }
 ];
 
