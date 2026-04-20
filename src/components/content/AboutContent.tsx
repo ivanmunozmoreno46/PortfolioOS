@@ -10,7 +10,7 @@ export default function AboutContent() {
           <div className="flex-shrink-0 mx-auto md:mx-0">
             <div className="win-border p-1 bg-w98-light w-48 h-48 shadow-md">
               <img 
-                src="/profile.jpg" 
+                src="https://raw.githubusercontent.com/ivanmunozmoreno46/PortfolioOS/main/public/profile.jpg" 
                 alt="Iván Muñoz Moreno" 
                 className="w-full h-full object-cover win-border-pressed"
               />
