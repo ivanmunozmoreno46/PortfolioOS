@@ -23,9 +23,8 @@ const DesktopIcon = ({ shortcut, onOpenWindow }: { key?: React.Key, shortcut: an
         className="w-[80px] flex flex-col items-center gap-1 cursor-pointer p-2 hover:bg-white/10 hover:border hover:border-dotted hover:border-white/50 border border-transparent"
         onDoubleClick={() => onOpenWindow(shortcut)}
       >
-        <div className="win-border w-10 h-10 bg-gray-100 flex items-center justify-center">
-          {/* Clone the icon element to override color to black to match the light background */}
-          {React.cloneElement(shortcut.icon as React.ReactElement, { color: 'black', size: 20 })}
+        <div className="win-border w-12 h-12 bg-gray-100 flex items-center justify-center shrink-0">
+          {shortcut.icon}
         </div>
         <span className="text-white text-xs drop-shadow-md text-center line-clamp-2">
           {shortcut.title}

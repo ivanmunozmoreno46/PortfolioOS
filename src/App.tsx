@@ -26,10 +26,10 @@ export const OsContext = createContext<{
 
 // App shortcuts
 export const DesktopShortcuts: ShortcutDef[] = [
-  { id: 'about', title: 'Sobre Mí', icon: <User size={32} color="white" />, content: <AboutContent /> },
-  { id: 'experience', title: 'Experiencia', icon: <GraduationCap size={32} color="white" />, content: <ExperienceContent /> },
-  { id: 'projects', title: 'Proyectos', icon: <Briefcase size={32} color="white" />, content: <ProjectsContent /> },
-  { id: 'contact', title: 'Contacto', icon: <Mail size={32} color="white" />, content: <ContactContent /> }
+  { id: 'about', title: 'Sobre Mí', icon: <User size={36} color="#00A4EF" className="drop-shadow-sm" />, content: <AboutContent /> },
+  { id: 'experience', title: 'Experiencia', icon: <GraduationCap size={36} color="#FFB900" className="drop-shadow-sm" />, content: <ExperienceContent /> },
+  { id: 'projects', title: 'Proyectos', icon: <Briefcase size={36} color="#F24E42" className="drop-shadow-sm" />, content: <ProjectsContent /> },
+  { id: 'contact', title: 'Contacto', icon: <Mail size={36} color="#80BB00" className="drop-shadow-sm" />, content: <ContactContent /> }
 ];
 
 export default function App() {

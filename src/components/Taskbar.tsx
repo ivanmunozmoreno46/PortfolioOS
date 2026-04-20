@@ -41,8 +41,13 @@ export default function Taskbar({ windows, onFocusWindow, onToggleMinimize }: Ta
           onClick={() => setStartOpen(!startOpen)}
           className={`font-bold px-2 py-0.5 flex items-center gap-1.5 text-[13px] ${startOpen ? 'win-border-pressed' : 'win-border'}`}
         >
-          <div className="w-3 h-3 bg-red-500 rounded-full"></div> 
-          <span>Inicio</span>
+          <svg className="w-4 h-4 ml-0.5" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="2" width="9" height="9" fill="#F24E42" />
+            <rect x="13" y="2" width="9" height="9" fill="#80BB00" />
+            <rect x="2" y="13" width="9" height="9" fill="#00A4EF" />
+            <rect x="13" y="13" width="9" height="9" fill="#FFB900" />
+          </svg>
+          <span className="mr-1 tracking-wide">Inicio</span>
         </button>
 
         {/* Start Menu Popup */}

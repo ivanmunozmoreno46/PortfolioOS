@@ -24,9 +24,15 @@ export default function StartMenu({ onClose }: StartMenuProps) {
         className="absolute bottom-10 left-0 w-64 win-border bg-w98-bg z-50 flex shadow-2xl"
       >
         {/* Left Side Banner */}
-        <div className="w-10 bg-titlebar-gradient flex items-end py-2">
-          <div className="text-white transform -rotate-90 origin-bottom-left ml-4 whitespace-nowrap font-bold tracking-widest text-lg">
-            <span className="text-gray-300 mr-1 font-light">Iván</span>OS
+        <div className="w-9 bg-titlebar-gradient flex flex-col justify-end items-center pb-6">
+          <div 
+            className="text-white text-xl tracking-wider select-none flex"
+            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+          >
+            <div>
+              <span className="font-bold">Iván</span>
+              <span className="font-light">OS</span>
+            </div>
           </div>
         </div>
 
