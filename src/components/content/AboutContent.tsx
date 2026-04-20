@@ -10,9 +10,10 @@ export default function AboutContent() {
           <div className="flex-shrink-0 mx-auto md:mx-0">
             <div className="win-border p-1 bg-w98-light w-48 h-48 shadow-md">
               <img 
-                src="https://raw.githubusercontent.com/ivanmunozmoreno46/PortfolioOS/main/public/profile.jpg" 
+                src="https://media.licdn.com/dms/image/v2/D4D03AQGr_wU8WB5c8Q/profile-displayphoto-scale_400_400/B4DZfLt5HVGkAg-/0/1751469495354?e=1778112000&v=beta&t=-mKQr2sng4tgTAqW45_u1tPwZE5jXZ2UmEgdJO3JNrw" 
                 alt="Iván Muñoz Moreno" 
                 className="w-full h-full object-cover win-border-pressed"
+                referrerPolicy="no-referrer"
               />
             </div>
           </div>
