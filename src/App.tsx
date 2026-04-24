@@ -16,6 +16,7 @@ type ShortcutDef = {
   icon: React.ReactNode;
   content: React.ReactNode;
   noPadding?: boolean;
+  externalUrl?: string; // Add optional external URL flag
 };
 
 export const OsContext = createContext<{
@@ -30,6 +31,7 @@ export const DesktopShortcuts: ShortcutDef[] = [
   { id: 'experience', title: 'Experiencia', icon: <GraduationCap size={36} color="#FFB900" className="drop-shadow-sm" />, content: <ExperienceContent /> },
   { id: 'projects', title: 'Proyectos', icon: <Briefcase size={36} color="#F24E42" className="drop-shadow-sm" />, content: <ProjectsContent /> },
   { id: 'vanguard', title: 'Vanguard Web', icon: <Globe size={36} color="#F2994A" className="drop-shadow-sm" />, content: <iframe src="https://vanguardweb-beta.vercel.app/" className="w-full h-full border-none" title="Vanguard Web" />, noPadding: true },
+  { id: 'portfolio-afc', title: 'Portfolio Colaborador', icon: <Globe size={36} color="#8A2BE2" className="drop-shadow-sm" />, content: null, externalUrl: 'https://portfolioafc.vercel.app/' },
   { id: 'contact', title: 'Contacto', icon: <Mail size={36} color="#80BB00" className="drop-shadow-sm" />, content: <ContactContent /> }
 ];
 
@@ -38,6 +40,12 @@ export default function App() {
   const [highestZIndex, setHighestZIndex] = useState(1);
 
   const openWindow = (shortcut: ShortcutDef) => {
+    // Check if it's an external link
+    if (shortcut.externalUrl) {
+      window.open(shortcut.externalUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
     const existing = windows.find(w => w.id === shortcut.id);
     
     if (existing) {
